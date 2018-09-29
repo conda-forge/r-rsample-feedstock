@@ -1,5 +1,4 @@
 {% set version = '0.0.2' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +9,13 @@ package:
 source:
   fn: rsample_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/rsample_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/rsample/rsample_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/rsample_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/rsample/rsample_{{ version }}.tar.gz
   sha256: aeaab3dc6c407707668610316dee6c8288c403fdbdfcd59d908500c588bf9582
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -23,7 +23,9 @@ build:
 
 requirements:
   build:
-    - r-base >=3.3.3
+    - {{posix}}zip               # [win]
+  host:
+    - r-base
     - r-broom
     - r-dplyr
     - r-purrr
@@ -31,9 +33,8 @@ requirements:
     - r-rlang
     - r-tibble
     - r-tidyr
-
   run:
-    - r-base >=3.3.3
+    - r-base
     - r-broom
     - r-dplyr
     - r-purrr
@@ -44,22 +45,23 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('rsample')"  # [not win]
+    - $R -e "library('rsample')"           # [not win]
     - "\"%R%\" -e \"library('rsample')\""  # [win]
 
 about:
-  home: https://CRAN.R-project.org/package=rsample
+  home: https://topepo.github.io/rsample
   license: GPL-2
-  summary: Classes and functions to create and summarize different types of resampling objects
-    (e.g. bootstrap, cross-validation).
+  summary: 'Classes and functions to create and summarize different types of resampling objects
+    (e.g. bootstrap, cross-validation). '
   license_family: GPL2
   license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'  # [unix]
   license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-2'  # [win]
 
 extra:
   recipe-maintainers:
-    - cbrueffer
     - johanneskoester
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
