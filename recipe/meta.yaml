@@ -30,6 +30,7 @@ requirements:
     - r-tibble
     - r-rlang
     - r-generics
+    - r-tidyr
   run:
     - r-base
     - r-dplyr
@@ -37,6 +38,7 @@ requirements:
     - r-tibble
     - r-rlang
     - r-generics
+    - r-tidyr
 
 test:
   commands:
