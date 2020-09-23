@@ -25,24 +25,32 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
-    - r-dplyr
+    - r-dplyr >=0.8.5
+    - r-ellipsis
     - r-furrr
     - r-generics
+    - r-modeldata
     - r-purrr
     - r-rlang >=0.4.0
+    - r-slider >=0.1.5
     - r-tibble
     - r-tidyr
     - r-tidyselect
+    - r-vctrs >=0.3.0
   run:
     - r-base
-    - r-dplyr
+    - r-dplyr >=0.8.5
+    - r-ellipsis
     - r-furrr
     - r-generics
+    - r-modeldata
     - r-purrr
     - r-rlang >=0.4.0
+    - r-slider >=0.1.5
     - r-tibble
     - r-tidyr
     - r-tidyselect
+    - r-vctrs >=0.3.0
 
 test:
   commands:
@@ -51,7 +59,7 @@ test:
 
 about:
   home: https://tidymodels.github.io/rsample
-  license: GPL-2
+  license: GPL-2.0-only
   summary: 'Classes and functions to create and summarize different types of resampling objects (e.g. bootstrap, cross-validation). '
   license_family: GPL2
   license_file:
