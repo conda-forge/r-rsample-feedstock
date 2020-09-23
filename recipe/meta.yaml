@@ -1,4 +1,4 @@
-{% set version = "0.0.7" %}
+{% set version = "0.0.8" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rsample_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rsample/rsample_{{ version }}.tar.gz
-  sha256: a832e978edde276d79e513bfa75e289c174fc64f76e016bd55716c96017ed068
+  sha256: 71e0d1a3852c5a2d8cac7d498878976de6452c4ceb815ec00e7f9166c2ec55df
 
 build:
   merge_build_host: true  # [win]
@@ -25,24 +25,32 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
-    - r-dplyr
+    - r-dplyr >=0.8.5
+    - r-ellipsis
     - r-furrr
     - r-generics
+    - r-modeldata
     - r-purrr
     - r-rlang >=0.4.0
+    - r-slider >=0.1.5
     - r-tibble
     - r-tidyr
     - r-tidyselect
+    - r-vctrs >=0.3.0
   run:
     - r-base
-    - r-dplyr
+    - r-dplyr >=0.8.5
+    - r-ellipsis
     - r-furrr
     - r-generics
+    - r-modeldata
     - r-purrr
     - r-rlang >=0.4.0
+    - r-slider >=0.1.5
     - r-tibble
     - r-tidyr
     - r-tidyselect
+    - r-vctrs >=0.3.0
 
 test:
   commands:
@@ -51,7 +59,7 @@ test:
 
 about:
   home: https://tidymodels.github.io/rsample
-  license: GPL-2
+  license: GPL-2.0-only
   summary: 'Classes and functions to create and summarize different types of resampling objects (e.g. bootstrap, cross-validation). '
   license_family: GPL2
   license_file:
