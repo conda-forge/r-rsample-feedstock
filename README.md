@@ -3,7 +3,7 @@ About r-rsample
 
 Home: https://tidymodels.github.io/rsample
 
-Package license: GPL-2.0-only
+Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rsample-feedstock/blob/main/LICENSE.txt)
 
