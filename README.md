@@ -1,11 +1,11 @@
-About r-rsample
-===============
+About r-rsample-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rsample-feedstock/blob/main/LICENSE.txt)
 
 Home: https://tidymodels.github.io/rsample
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rsample-feedstock/blob/main/LICENSE.txt)
 
 Summary: Classes and functions to create and summarize different types of resampling objects (e.g. bootstrap, cross-validation). 
 
