@@ -1,4 +1,4 @@
-{% set version = "1.1.1" %}
+{% set version = "1.2.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rsample_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rsample/rsample_{{ version }}.tar.gz
-  sha256: 90d2ae86d27a397ba9d8d010e7dea5c7b86fecbec7e9af273db0c2e8c374b8ba
+  sha256: e0c9b7060e0037f4213a5faad73f5910cf97bf93ecba93d35301cbc88cf45eed
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
