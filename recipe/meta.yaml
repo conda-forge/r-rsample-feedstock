@@ -1,6 +1,5 @@
 {% set version = "1.2.1" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-rsample
@@ -13,8 +12,7 @@ source:
   sha256: e3f437f21ea527d1c9fa344494b4c127254c5c5d87b0b2aecfcbdeea5964edc5
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   noarch: generic
   rpaths:
     - lib/R/lib/
